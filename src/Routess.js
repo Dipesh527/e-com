@@ -16,6 +16,7 @@ import Display2 from './page/axios/Display2'
 import Users from './page/jasonapis/Users'
 import Cart3 from './page/axios/Cart3'
 import Todos from './page/todos/Todos'
+import EmailConfirmation from './page/EmailConfirmation'
 
 const Routess = () => {
   return (
@@ -38,6 +39,9 @@ const Routess = () => {
         <Route path='/users' element= {<Users/>} />
         <Route path='/product/:id' element= {<Cart3/>} />
         <Route path='/todos' element= {<Todos/>} />
+        <Route path='/emailverify/:token' element= {<EmailConfirmation/>} />
+        
+   
 
 
 

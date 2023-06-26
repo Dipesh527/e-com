@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SignIn = () => {
+  const[email,setEmail]=useState('')
+  const[password,setPassword]=useState('')
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+ 
+  }
   return (
     <>
     <div className="container-fluid text-center">
@@ -10,11 +16,11 @@ const SignIn = () => {
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
       
           <div className="form-floating ">
-            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={e=>setEmail(e.target.value)} />
             <label for="floatingInput">Email address</label>
           </div>
           <div className="form-floating">
-            <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
+            <input type="password" className="form-control" id="floatingPassword" onChange={e=>setPassword(e.target.value)} placeholder="Password"/>
             <label for="floatingPassword">Password</label>
           </div>
       
@@ -23,7 +29,7 @@ const SignIn = () => {
               <input type="checkbox" value="remember-me"/> Remember me
             </label>
           </div>
-          <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+          <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={handleSubmit}>Sign in</button>
           Don't have an account?Please <a href="register.html">Register</a>
           <p className="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </form>
